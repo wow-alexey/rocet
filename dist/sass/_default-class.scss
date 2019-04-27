@@ -8,6 +8,8 @@ body {
   overflow-x: hidden;
   font-size: rem-calc(12);
   letter-spacing: rem-calc(.59);
+  font-family: $avenir;
+  background: $default-bg;
   @include breakpoint(medium) {
     font-size: rem-calc(14);
   }
@@ -16,6 +18,32 @@ body {
 header,main,footer {
   max-width: 100%;
   transition: margin $transition;
+}
+
+header {
+  background: $white;
+  padding: rem-calc(9 0);
+  border-bottom: rem-calc(1) solid $header-border;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+main {
+  background: $white;
+  margin-top: rem-calc(35);
+
+}
+
+footer {
+  background: $default-bg;
+  padding: rem-calc(34 0);
+  font-size: rem-calc(13);
+  font-weight: $bold;
+  color: $footer-color;
+  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -51,7 +79,6 @@ h1, h2, h3, h4, h5, h6,
   font-size: rem-calc(17);
   line-height: rem-calc(18);
   margin-bottom: rem-calc(8);
-  @include left-line;
   @include breakpoint(medium) {
     margin-bottom: rem-calc(15);
     font-size: rem-calc(22);
@@ -75,25 +102,48 @@ h1, h2, h3, h4, h5, h6,
 
 input, textarea{
   outline: none;
-  background: $input-bg;
+  background: $white;
   border: 0;
-  border-radius: rem-calc(3);
-  padding: rem-calc(11 17);
+  border-radius: rem-calc(4);
+  padding: rem-calc(8 10 8 15);
+  font-size: rem-calc(13);
   width: 100%;
   box-sizing: border-box;
+  box-shadow: $box-shadow;
   border: rem-calc(1) solid transparent;
+  letter-spacing: rem-calc(.56);
+  font-family: $avenir;
   transition: all $slow-transition;
   @include placeholder() {
     color: $input-color;
   }
   &:focus {
-   box-shadow: $box-shadow;
-    background-color: $white;
     border-color: $border-color;
   }
 }
 
 textarea {
-  height: rem-calc(169);
+  height: rem-calc(75);
   resize: none;
+}
+
+.button.green-btn, button.green-btn {
+  cursor: pointer;
+  outline: none;
+  background: $green;
+  color: $white;
+  min-width: rem-calc(220);
+  border-radius: rem-calc(4);
+  padding: rem-calc(9 23);
+  text-align: center;
+  font-family: $avenir;
+  font-size: rem-calc(11);
+  font-weight: $bold;
+  border: transparent;
+  letter-spacing: rem-calc(.47);
+  transition: background-color $transition;
+  &:hover {
+    background: rgba($green, .7);
+  }
+
 }

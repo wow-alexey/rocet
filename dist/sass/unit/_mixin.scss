@@ -43,20 +43,29 @@
 
 // Containers
 @mixin containers {
+  padding: rem-calc(0 15);
   margin-left: auto;
   margin-right: auto;
+  @include breakpoint(medium){
+    max-width: rem-calc(940);
+  }
   @include breakpoint(large){
-    max-width: rem-calc(1100);
+    max-width: rem-calc(1024);
   }
   @include breakpoint(xlarge){
-    max-width: rem-calc(1160);
+    max-width: rem-calc(1100);
   }
-  @include breakpoint(xxlarge){
-    max-width: rem-calc(1400);
-  }
-  @include breakpoint(xxxlarge){
-    max-width: rem-calc(1650);
-  }
+  //@include breakpoint(xxlarge){
+  //  max-width: rem-calc(1400);
+  //}
+  //@include breakpoint(xxxlarge){
+  //  max-width: rem-calc(1650);
+  //}
+}
+
+@mixin hideText {
+  font-size: 0;
+  vertical-align: top;
 }
 
 // burger

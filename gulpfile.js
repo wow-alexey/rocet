@@ -31,29 +31,29 @@ gulp.task('build', function () {
     .pipe(gulp.dest('app/img/'));
 });
 
-gulp.task('scripts', function () {
-    return gulp.src([
-        'dist/js/*.js'
-        ])
-    .pipe(babel({
-        presets: ['env']
-    }))
-    .pipe(concat('libs.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('app/js'));
-});
+// gulp.task('scripts', function () {
+//     return gulp.src([
+//         'dist/js/*.js'
+//         ])
+//     .pipe(babel({
+//         presets: ['env']
+//     }))
+//     .pipe(concat('libs.min.js'))
+//     .pipe(uglify())
+//     .pipe(gulp.dest('app/js'));
+// });
 
 gulp.task('browser-sync', function() {
-    browserSync.init(["css/*.css", "js/*.js", "*.html"], {
+    browserSync.init(["css/*.css", /*"js/*.js",*/ "*.html"], {
         server: {
             baseDir: "app"
         }
     });
 });
 
-gulp.task('watch', ['sass', 'scripts', 'fileinclude', 'browser-sync'], function () {
+gulp.task('watch', ['sass', /*'scripts',*/ 'fileinclude', 'browser-sync'], function () {
     gulp.watch('dist/sass/**/*.scss', ['sass']);
-    gulp.watch('dist/js/*.js', ['scripts']);
+    // gulp.watch('dist/js/*.js', ['scripts']);
     gulp.watch('dist/**/*.html', ['fileinclude']);
     gulp.watch(['app/**'], reload);
 });
