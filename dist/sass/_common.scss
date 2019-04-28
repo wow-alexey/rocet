@@ -6,7 +6,7 @@
   display: inline-block;
   a {
     display: inline-block;
-    background: url("../img/logo.png");
+    background: url("../img/logo.svg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -280,7 +280,8 @@
     outline: none;
     width: rem-calc(25);
     height: rem-calc(25);
-    line-height: rem-calc(24);
+    line-height: rem-calc(16);
+    letter-spacing: rem-calc(-0.8);
     text-align: center;
     border: rem-calc(1) solid #c5c5c5;
     background: $white;
@@ -422,4 +423,9 @@
       margin-top: rem-calc(6);
     }
   }
+}
+
+.graph-holder {
+  padding: rem-calc(35 0);
+  border-bottom: rem-calc(1) solid $default-border;
 }

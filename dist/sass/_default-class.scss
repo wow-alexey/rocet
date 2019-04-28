@@ -24,6 +24,7 @@ header {
   background: $white;
   padding: rem-calc(9 0);
   border-bottom: rem-calc(1) solid $header-border;
+  margin-bottom: rem-calc(35);
   .container {
     display: flex;
     justify-content: space-between;
@@ -33,8 +34,11 @@ header {
 
 main {
   background: $white;
-  margin-top: rem-calc(35);
+}
 
+mark {
+  background: none;
+  font-weight: $bold;
 }
 
 footer {
@@ -146,4 +150,40 @@ textarea {
     background: rgba($green, .7);
   }
 
+}
+
+.has-sidebar {
+  display: flex;
+  main {
+    width: calc(80% - 20px);
+  }
+}
+
+aside {
+  border: rem-calc(1) solid rgba(234, 234, 234, .5);
+  background: rgba($priority-color, .05);
+  margin-right: rem-calc(20);
+  width: 20%;
+  ul {
+    width: 100%;
+    background: $white;
+  }
+  li {
+    display: inline-block;
+    width: 100%;
+    border-bottom: rem-calc(1) solid $default-border;
+    padding: rem-calc(3 7);
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: rem-calc(10 15 10 45);
+      font-size: rem-calc(13);
+      border-radius: rem-calc(3);
+      transition: all $transition;
+      &:hover {
+        background: $purple;
+        color: $white;
+      }
+    }
+  }
 }
