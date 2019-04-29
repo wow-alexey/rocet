@@ -160,29 +160,71 @@ textarea {
 }
 
 aside {
-  border: rem-calc(1) solid rgba(234, 234, 234, .5);
-  background: rgba($priority-color, .05);
+  border: rem-calc(1) solid #dfdfdf;
+  background: #e5e5e5;
   margin-right: rem-calc(20);
   width: 20%;
   ul {
     width: 100%;
     background: $white;
   }
+  .image-holder {
+    position: absolute;
+    top: 50%;
+    left: rem-calc(25);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: rem-calc(24);
+    height: rem-calc(24);
+    transform: translateY(-50%);
+    z-index: 5;
+  }
   li {
+    position: relative;
     display: inline-block;
     width: 100%;
     border-bottom: rem-calc(1) solid $default-border;
-    padding: rem-calc(3 7);
+    &:first-of-type {
+      background: #e5e5e5;
+      padding: rem-calc(6 10);
+      a {
+        background: $purple;
+        color: $white;
+        padding: rem-calc(14 15 14 62);
+        &:hover {
+          background: rgba($purple, .7);
+        }
+      }
+    }
+    &.current {
+      a {
+        color: $purple;
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: rem-calc(4);
+          height: 100%;
+          background: $purple;
+        }
+        &:hover {
+          cursor: auto;
+          background: $white;
+        }
+      }
+    }
     a {
       display: inline-block;
       width: 100%;
-      padding: rem-calc(10 15 10 45);
+      padding: rem-calc(14 15 14 73);
       font-size: rem-calc(13);
       border-radius: rem-calc(3);
       transition: all $transition;
       &:hover {
-        background: $purple;
-        color: $white;
+        background: #f3f3f3;
       }
     }
   }
