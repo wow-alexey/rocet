@@ -196,6 +196,18 @@ aside {
           background: rgba($purple, .7);
         }
       }
+      &.current {
+        a {
+          background: $purple;
+          color: $white;
+          &:after {
+            display: none;
+          }
+          &:hover {
+            background: $purple;
+          }
+        }
+      }
     }
     &.current {
       a {

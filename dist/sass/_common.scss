@@ -101,11 +101,12 @@
 .priorities {
   border-radius: rem-calc(4);
   border: rem-calc(1) solid $default-border;
-  padding: rem-calc(6 3 0);
+  padding: rem-calc(2 3);
   background: $priorities-bg;
   display: flex;
   flex-wrap: wrap;
-  .item {
+  .label-info {
+    display: inline-block;
     position: relative;
     background: $priority-bg;
     padding: rem-calc(5 18 5 8);
@@ -114,9 +115,9 @@
     color: $priority-color;
     letter-spacing: rem-calc(.39);
     border-radius: rem-calc(11);
-    margin: rem-calc(0 4 6);
+    margin: rem-calc(3 4);
   }
-  .remove-priority {
+  span[data-role='remove'] {
     position: absolute;
     top: 50%;
     right: rem-calc(5);
@@ -141,7 +142,16 @@
     &:after {
       height: rem-calc(7);
     }
-
+  }
+  input {
+    border: 0;
+    background: transparent;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    padding: rem-calc(0 3);
+    margin: rem-calc(3 4);
+    min-width: rem-calc(100);
   }
 }
 
