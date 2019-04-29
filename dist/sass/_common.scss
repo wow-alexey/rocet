@@ -344,6 +344,7 @@
     margin: rem-calc(6 4);
   }
   span[data-role='remove'] {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     right: rem-calc(5);
