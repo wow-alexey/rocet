@@ -450,19 +450,24 @@
       margin-top: rem-calc(23);
     }
   }
+  span {
+    display: inline-block;
+    margin: rem-calc(0 10);
+  }
   .title {
     font-weight: $bold;
     color: $label-color;
-    margin: rem-calc(0 0 8 62);
+    margin: rem-calc(0 0 8 100);
     font-size: rem-calc(13);
   }
   label {
     font-size: rem-calc(12);
     letter-spacing: rem-calc(1);
     font-weight: 500;
-    flex-basis: rem-calc(57);
+    flex-basis: rem-calc(100);
     margin-right: rem-calc(11);
     text-align: right;
+    white-space: nowrap;
   }
   .action-holder {
     display: flex;
@@ -472,7 +477,7 @@
     }
   }
   textarea {
-    margin: rem-calc(0 0 0 62);
+    margin: rem-calc(0 0 0 100);
   }
 }
 
