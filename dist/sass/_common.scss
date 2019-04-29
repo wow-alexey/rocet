@@ -223,7 +223,7 @@
     }
   }
   .inside {
-    max-width: rem-calc(170);
+    max-width: rem-calc(285);
     margin: 0 auto;
   }
 }
@@ -233,7 +233,10 @@
 }
 
 .multi-item {
-  min-height: 120px;
+  min-height: 98px;
+  padding-bottom: rem-calc(15);
+  border-bottom: rem-calc(1) solid $default-border;
+
   .multi-name {
     display: inline-block;
     font-weight: $bold;
@@ -242,7 +245,7 @@
     margin-bottom: rem-calc(6);
   }
   & + .multi-item {
-    margin-top: rem-calc(23);
+    margin-top: rem-calc(15);
   }
 }
 

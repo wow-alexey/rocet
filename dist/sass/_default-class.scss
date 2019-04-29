@@ -113,8 +113,8 @@ input, textarea{
   font-size: rem-calc(13);
   width: 100%;
   box-sizing: border-box;
-  box-shadow: $box-shadow;
-  border: rem-calc(1) solid transparent;
+  //box-shadow: $box-shadow;
+  border: rem-calc(1) solid rgba(0,0,0,.15);
   letter-spacing: rem-calc(.56);
   font-family: $avenir;
   transition: all $slow-transition;
