@@ -280,6 +280,8 @@
     margin: rem-calc(0 -4);
     .label-info {
       margin: rem-calc(6 4 0);
+      background: $priority-bg;
+      color: $priority-color;
     }
     input {
       order: 1;
@@ -334,11 +336,12 @@
   .label-info {
     display: inline-block;
     position: relative;
-    background: $priority-bg;
+    background: $yellow;
     padding: rem-calc(5 18 5 8);
     font-size: rem-calc(12);
-    font-weight: $bold;
-    color: $priority-color;
+    //font-weight: $bold;
+    font-weight: 400;
+    color: $white;
     letter-spacing: rem-calc(.39);
     border-radius: rem-calc(11);
     margin: rem-calc(6 4);
@@ -418,12 +421,15 @@
     display: inline-block;
     cursor: pointer;
     background: $white;
-    transition: background-color $transition;
+    transition: all $transition;
   }
   input {
     display: none;
     &:checked + label {
-      background: #eee;
+      //background: #eee;
+      background: $yellow;
+      color: $white;
+      border-color: $yellow;
     }
   }
   .pr-choice {
