@@ -116,6 +116,26 @@
     letter-spacing: rem-calc(.39);
     border-radius: rem-calc(11);
     margin: rem-calc(3 4);
+    &.checkbox-holder {
+      background: $priority-bg;
+      cursor: pointer;
+      padding: 0;
+      label {
+        display: inline-block;
+        color: $black;
+        border-radius: rem-calc(11);
+        cursor: pointer;
+        padding: rem-calc(5 8);
+        transition: all $transition;
+      }
+      input {
+        display: none;
+        &:checked + label {
+          background: $yellow;
+          color: $white;
+        }
+      }
+    }
   }
   span[data-role='remove'] {
     position: absolute;
@@ -152,6 +172,16 @@
     padding: rem-calc(0 3);
     margin: rem-calc(3 4);
     min-width: rem-calc(100);
+  }
+  .other {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .title-other {
+      display: inline-block;
+      margin: rem-calc(6 4);
+      padding: rem-calc(5 4);
+    }
   }
 }
 

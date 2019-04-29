@@ -78,12 +78,65 @@
         <div class="main-content-holder">
             <div class="priority-holder">
     <span class="title">Priority type</span>
-    <div class="priorities">
+    <div class="priorities bootstrap-tagsinput">
         <!--<span class="item">-->
-            <!--Goal-->
-            <!--<a href="#" class="remove-priority">Remove</a>-->
+        <!--Goal-->
+        <!--<a href="#" class="remove-priority">Remove</a>-->
         <!--</span>-->
-        <input type="text" value="Goal, Objective, Threat, Customer need" data-role="tagsinput" class="form-control" />
+        <div class="select-holder">
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="goal" checked>
+                <label for="goal">Goal</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="objective" checked>
+                <label for="objective">Objective</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Threat">
+                <label for="Threat">Threat</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Customer-need">
+                <label for="Customer-need">Customer need</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Security">
+                <label for="Security">Security</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Environment">
+                <label for="Environment">Environment</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Project">
+                <label for="Project">Project</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Problem">
+                <label for="Problem">Problem</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Backlog-Item">
+                <label for="Backlog-Item">Backlog Item</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="HR">
+                <label for="HR">HR</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="New-Product">
+                <label for="New-Product">New Product</label>
+            </div>
+            <div class="label-info checkbox-holder">
+                <input type="checkbox" id="Lifestyle">
+                <label for="Lifestyle">Lifestyle</label>
+            </div>
+        </div>
+        <div class="other">
+            <span class="title-other">Other:</span>
+            <input type="text" value="Additional" data-role="tagsinput" class="form-control"/>
+        </div>
     </div>
 </div>
             <div class="tabs-holder">
@@ -333,23 +386,19 @@
                     <div class="choice-holder">
                         <div class="pr-choice">
                             <input type="radio" name="somename" value="value-1" id="somename-1">
-                            <label for="somename-1" tabindex="0">Not Urgent</label>
+                            <label for="somename-1" tabindex="0">Low</label>
                         </div>
                         <div class="pr-choice">
                             <input type="radio" name="somename" value="value-1" id="somename-2">
-                            <label for="somename-2" tabindex="0">Urgent</label>
+                            <label for="somename-2" tabindex="0">Some</label>
                         </div>
                         <div class="pr-choice">
                             <input type="radio" name="somename" value="value-1" id="somename-3">
-                            <label for="somename-3" tabindex="0">Seriously Urgent</label>
+                            <label for="somename-3" tabindex="0">Serious</label>
                         </div>
                         <div class="pr-choice">
-                            <input type="radio" name="somename" value="value-1" id="somename-7">
-                            <label for="somename-7" tabindex="0">Exceptionally Urgent</label>
-                        </div>
-                        <div class="pr-choice">
-                            <input type="radio" name="somename" value="value-1" id="somename-8">
-                            <label for="somename-8" tabindex="0">Exceptional Effort / Exceptional Cost</label>
+                            <input type="radio" name="somename" value="value-1" id="somename-4">
+                            <label for="somename-4" tabindex="0">Exceptional</label>
                         </div>
                     </div>
                 </form>
@@ -357,16 +406,107 @@
                     <div class="row-name">Value</div>
                     <div class="choice-holder">
                         <div class="pr-choice">
-                            <input type="radio" name="somename" value="value-1" id="somename-4">
-                            <label for="somename-4" tabindex="0">Somename</label>
+                            <input type="radio" name="somename" value="value-1" id="somename-7">
+                            <label for="somename-7" tabindex="0">Low</label>
                         </div>
                         <div class="pr-choice">
                             <input type="radio" name="somename" value="value-1" id="somename-5">
-                            <label for="somename-5" tabindex="0">Somename</label>
+                            <label for="somename-5" tabindex="0">Some</label>
                         </div>
                         <div class="pr-choice">
                             <input type="radio" name="somename" value="value-1" id="somename-6">
-                            <label for="somename-6" tabindex="0">Somename</label>
+                            <label for="somename-6" tabindex="0">Serious</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-8">
+                            <label for="somename-8" tabindex="0">Exceptional</label>
+                        </div>
+                    </div>
+                </form>
+                <form class="row">
+                    <div class="row-name">Threat</div>
+                    <div class="choice-holder">
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-9">
+                            <label for="somename-9" tabindex="0">Low</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-10">
+                            <label for="somename-10" tabindex="0">Some</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-11">
+                            <label for="somename-11" tabindex="0">Serious</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-12">
+                            <label for="somename-12" tabindex="0">Exceptional</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="type">
+                <div class="title">Commitment</div>
+                <form class="row">
+                    <div class="row-name">Time</div>
+                    <div class="choice-holder">
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-13">
+                            <label for="somename-13" tabindex="0">Low</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-14">
+                            <label for="somename-14" tabindex="0">Some</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-15">
+                            <label for="somename-15" tabindex="0">Serious</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-16">
+                            <label for="somename-16" tabindex="0">Exceptional</label>
+                        </div>
+                    </div>
+                </form>
+                <form class="row">
+                    <div class="row-name">Complexity</div>
+                    <div class="choice-holder">
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-17">
+                            <label for="somename-17" tabindex="0">Low</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-20">
+                            <label for="somename-20" tabindex="0">Some</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-18">
+                            <label for="somename-18" tabindex="0">Serious</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-19">
+                            <label for="somename-19" tabindex="0">Exceptional</label>
+                        </div>
+                    </div>
+                </form>w
+                <form class="row">
+                    <div class="row-name">Resourses</div>
+                    <div class="choice-holder">
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-21">
+                            <label for="somename-21" tabindex="0">Low</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-22">
+                            <label for="somename-22" tabindex="0">Some</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-23">
+                            <label for="somename-23" tabindex="0">Serious</label>
+                        </div>
+                        <div class="pr-choice">
+                            <input type="radio" name="somename" value="value-1" id="somename-24">
+                            <label for="somename-24" tabindex="0">Exceptional</label>
                         </div>
                     </div>
                 </form>
@@ -395,7 +535,7 @@
                 <div class="title">User Story</div>
                 <div class="action-holder">
                     <label for="role">As a</label>
-                    <input type="text" id="role" placeholder="Role name">
+                    <input type="text" id="role" placeholder="Role name" required>
                 </div>
                 <div class="action-holder">
                     <label for="action">When I</label>
@@ -403,11 +543,11 @@
                 </div>
                 <div class="action-holder">
                     <label for="requirement">I need</label>
-                    <input type="text" id="requirement" placeholder="Requirement">
+                    <input type="text" id="requirement" required placeholder="Requirement">
                 </div>
                 <div class="action-holder">
                     <label for="benefit">So that</label>
-                    <input type="text" id="benefit" placeholder="Benefit">
+                    <input type="text" id="benefit" placeholder="Benefit" required>
                 </div>
             </div>
             <div class="data-holder">
