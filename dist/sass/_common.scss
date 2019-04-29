@@ -253,22 +253,40 @@
       margin-top: rem-calc(6);
     }
   }
+  //.input-part {
+  //  width: calc(100% - 32px);
+  //  input {
+  //    width: 100%;
+  //    box-shadow: $box-shadow-inset;
+  //    border-radius: rem-calc(3);
+  //    border: rem-calc(1) solid #c5c5c5;
+  //    background-color: $white;
+  //    font-family: $avenir;
+  //    font-size: rem-calc(10);
+  //    padding: rem-calc(5 7);
+  //    @include placeholder() {
+  //      color: $input-color;
+  //      font-family: $avenir;
+  //      font-size: rem-calc(10);
+  //    }
+  //  }
+  //}
   .input-part {
-    width: calc(100% - 32px);
+    width: 100%;
+  }
+  .bootstrap-tagsinput {
+    display: flex;
+    flex-wrap: wrap;
+    margin: rem-calc(0 -4);
+    .label-info {
+      margin: rem-calc(6 4 0);
+    }
     input {
-      width: 100%;
-      box-shadow: $box-shadow-inset;
-      border-radius: rem-calc(3);
-      border: rem-calc(1) solid #c5c5c5;
-      background-color: $white;
-      font-family: $avenir;
-      font-size: rem-calc(10);
-      padding: rem-calc(5 7);
-      @include placeholder() {
-        color: $input-color;
-        font-family: $avenir;
-        font-size: rem-calc(10);
-      }
+      order: 1;
+      margin: rem-calc(0 4);
+    }
+    span {
+      order: 2;
     }
   }
   .multi-addd-item {
@@ -306,6 +324,49 @@
     &.minus {
       border: rem-calc(1) solid #e8e8e8;
       background: $header-border;
+    }
+  }
+}
+
+.bootstrap-tagsinput {
+  display: flex;
+  flex-wrap: wrap;
+  .label-info {
+    display: inline-block;
+    position: relative;
+    background: $priority-bg;
+    padding: rem-calc(5 18 5 8);
+    font-size: rem-calc(12);
+    font-weight: $bold;
+    color: $priority-color;
+    letter-spacing: rem-calc(.39);
+    border-radius: rem-calc(11);
+    margin: rem-calc(6 4);
+  }
+  span[data-role='remove'] {
+    position: absolute;
+    top: 50%;
+    right: rem-calc(5);
+    transform: translateY(-50%) rotate(45deg);
+    width: rem-calc(10);
+    height: rem-calc(10);
+    @include hideText;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem-calc(2);
+      height: rem-calc(2);
+      background: $dark-black;
+      opacity: .19;
+    }
+    &:before {
+      width: rem-calc(7);
+    }
+    &:after {
+      height: rem-calc(7);
     }
   }
 }
