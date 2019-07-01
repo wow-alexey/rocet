@@ -1,0 +1,14 @@
+.panel-button {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+
+  &+&{
+	margin-top: 50px;
+
+	&+&{
+	  margin-top: 100px;
+	}
+  }
+}
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team | Rocket</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="#">
+                logo
+            </a>
+        </div>
+
+        <div class="user-area">
+            <span class="user-name">John Jones</span>
+            <a href="#" class="logout">Logout</a>
+            <a href="#" class="info">?</a>
+        </div>
+    </div>
+</header>
+<div class="container has-sidebar">
+    <aside>
+    <ul>
+        <li>
+            <div class="image-holder" style="background-image: url('img/priority.svg')"></div>
+            <a href="#">
+                New Priority
+            </a>
+        </li>
+        <li class="current">
+            <div class="image-holder" style="background-image: url('img/home.svg')"></div>
+            <a href="#">
+                Home
+            </a>
+        </li>
+        <li>
+            <div class="image-holder" style="background-image: url('img/reports.svg')"></div>
+            <a href="#">
+                Reports
+            </a>
+        </li>
+        <li>
+            <div class="image-holder" style="background-image: url('img/teams.svg')"></div>
+            <a href="../team.html">
+                Team
+            </a>
+        </li>
+        <li>
+            <div class="image-holder" style="background-image: url('img/settings.svg')"></div>
+            <a href="#">
+                Settings
+            </a>
+        </li>
+    </ul>
+</aside>
+    <main class="team-content">
+        <div class="team-top">
+            <span class="title">Teams</span>
+            <a href="#" class="button green-btn">Create Team</a>
+        </div>
+        <div class="main-content-holder">
+
+            <!--WHEN YOU DON'T HAVE ANY TEAMS-->
+            <div class="empty-list">
+                <span>You don’t have any teams yet</span>
+                <div class="btn-holder">
+                    <a href="#" class="button">
+                        Create Team
+                    </a>
+                </div>
+            </div>
+
+            <!--WHEN YOU HAVE A TEAM-->
+            <div class="team-info">
+                <div class="team-main">
+                    <a href="#" class="team-logo">
+                        <span class="small-logo" style="background-image: url('img/small-logo.png')">logo</span>
+                    </a>
+                    <span class="name">PR Development</span>
+                </div>
+                <div class="team-settings">
+                    <div class="dropdown show">
+                        <a class=" dropdown-toggle icon-holder" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                        <span class="inner-icon" style="background-image: url('img/settings.png')">
+                                settings
+                            </span>
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Edit labels</a>
+                            <a class="dropdown-item" href="#">Edit introjs</a>
+                        </div>
+                    </div>
+                    <a class="edit-name icon-holder" href="#">
+                        <span class="inner-icon" style="background-image: url('img/person.png')">person</span>
+                    </a>
+                    <a class="show-team icon-holder" href="#">
+                        <span class="inner-icon" style="background-image: url('img/team.png')">team</span>
+                        <span class="label">Team</span>
+                    </a>
+                </div>
+            </div>
+            <ul class="team-member">
+                <li class="member">
+                    <a class="edit-name icon-holder" href="#">
+                        <span class="inner-icon" style="background-image: url('img/person.png')">person</span>
+                    </a>
+                    <span class="name">Sergey Golovashkin</span>
+                </li>
+                <li class="member">
+                    <a class="edit-name icon-holder" href="#">
+                        <span class="inner-icon" style="background-image: url('img/person.png')">person</span>
+                    </a>
+                    <span class="name">Alexander Hall</span>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<footer>
+    <div class="container">
+        <span>Copyright PriorityRocket Inc. 2019, <a href="#">www.priorityrocket.com</a></span>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+<script src="js/libs.js"></script>
+</body>
+</html>

@@ -1,0 +1,968 @@
+@mixin standartColumnText {
+  color: $lighty-black;
+  width: 100%;
+  font-size: rem-calc(14);
+  line-height: rem-calc(20);
+  letter-spacing: rem-calc(.66);
+  @include breakpoint(large) {
+    width: 50%;
+    margin: 0 rem-calc(10);
+  }
+  & + .column {
+    margin-top: rem-calc(20);
+    @include breakpoint(large) {
+      margin-top: 0;
+    }
+  }
+  .btn-holder {
+    text-align: center;
+  }
+  * + * {
+    margin-top: rem-calc(20);
+  }
+  p {
+    @include breakpoint(large) {
+      max-width: rem-calc(380);
+    }
+  }
+  p + p {
+    margin-top: rem-calc(35);
+  }
+}
+
+@mixin standartBorder {
+  box-shadow: $new-box-shadow;
+  border-radius: rem-calc(8);
+  border: rem-calc(2) solid $input-bg;
+}
+
+.priority-info {
+  font-size: rem-calc(16);
+  background: $white;
+  header {
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    .container {
+      border-bottom: rem-calc(1) solid $header-border;
+      padding: rem-calc(20 15 10);
+      @include breakpoint(large) {
+        padding: rem-calc(20 0 10);
+      }
+    }
+    button, .button {
+      background: $deep-red;
+    }
+    nav {
+      width: 100%;
+      margin-bottom: rem-calc(15);
+      @include breakpoint(large) {
+        width: auto;
+        margin-bottom: 0;
+
+      }
+    }
+    &.active {
+      .burger {
+        .burger-inner {
+          opacity: 0;
+          right: 50%;
+          transform: translateY(-50%) translateX(50%);
+        }
+        &:before {
+          top: calc(50% - 1.5px);
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:after {
+          bottom: calc(50% - 1.5px);
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+      .nav-holder {
+        transform: translateX(0);
+      }
+    }
+  }
+  .logo {
+    a {
+      width: rem-calc(132);
+      height: rem-calc(40);
+    }
+  }
+  button, .button {
+    display: inline-block;
+    letter-spacing: rem-calc(.75);
+    border-radius: rem-calc(3);
+    border: 0;
+    font-weight: $bold;
+    line-height: rem-calc(42);
+    height: rem-calc(42);
+    padding: 0 rem-calc(25);
+    color: $white;
+    outline: none;
+    transition: opacity $transition;
+    &:hover {
+      text-decoration: none;
+      opacity: .8;
+    }
+  }
+  .burger {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 19px;
+    font-size: 0;
+    z-index: 5;
+    cursor: pointer;
+    @include breakpoint(large) {
+      display: none;
+    }
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: $black;
+      left: 0;
+      transition: top $transition,
+      left $transition,
+      bottom $transition,
+      transform $transition;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+    .burger-inner {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 50%;
+      height: 3px;
+      background: $black;
+      transform: translateY(-50%);
+      opacity: 1;
+      transition: opacity $slow-transition, right $transition, transform $transition;
+    }
+  }
+  .nav-holder {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: flex-start;
+    background: $white;
+    padding: rem-calc(30 45 30 30);
+    transform: translateX(-100%);
+    transition: transform $transition;
+    @include breakpoint(large) {
+      position: static;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      width: calc(100% - 164px);
+      margin-left: rem-calc(32);
+      transform: translateY(0);
+      padding: 0;
+      height: auto;
+    }
+  }
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    height: 75vh;
+    overflow: auto;
+    max-height: 430px;
+    width: 100%;
+    @include breakpoint(large) {
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      height: auto;
+      overflow: hidden;
+    }
+    li {
+      font-size: 20px;
+      @include breakpoint(large) {
+        font-size: 16px;
+      }
+    }
+    li + li {
+      margin-top: 20px;
+      @include breakpoint(large) {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+    }
+    a {
+      transition: color $transition;
+      &:hover {
+        color: $deep-red;
+        text-decoration: none;
+      }
+    }
+    .current {
+      a {
+        color: $deep-red;
+      }
+    }
+  }
+  footer {
+    border-top: rem-calc(14) solid $yellow;
+    background: transparent;
+    padding: rem-calc(41 15);
+    letter-spacing: rem-calc(.7);
+    font-size: rem-calc(12);
+    line-height: 1.5;
+  }
+  main {
+    margin-top: rem-calc(41);
+    @include breakpoint(medium) {
+      padding: 0 rem-calc(15);
+    }
+  }
+  .h1, h1 {
+    font-weight: $bold;
+    font-size: rem-calc(31);
+    letter-spacing: rem-calc(1.45);
+    color: $lighty-black;
+    &.has-line {
+      padding-bottom: rem-calc(2);
+      border-bottom: rem-calc(9) solid $yellow;
+    }
+    &.align-center {
+      text-align: center;
+    }
+  }
+  .intro-block {
+    .button, button {
+      background: $green;
+      width: rem-calc(220);
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: rem-calc(7 0 44);
+      border-bottom: rem-calc(1) solid $light-gray;
+      max-width: rem-calc(380);
+      margin: 0 auto;
+      @include breakpoint(medium) {
+        max-width: rem-calc(600);
+      }
+      @include breakpoint(large) {
+        max-width: none;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 rem-calc(-10);
+      }
+    }
+    .column {
+      @include standartColumnText;
+      &:first-of-type {
+        margin-top: rem-calc(8);
+      }
+    }
+    .image-holder {
+      width: 100%;
+      height: 350px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      @include hideText;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .score-task {
+    margin-top: rem-calc(41);
+    padding-bottom: rem-calc(54);
+    border-bottom: rem-calc(1) solid $light-gray;
+    img {
+      width: 100%;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      //justify-content: space-between;
+      margin: rem-calc(45) auto 0;
+      max-width: rem-calc(600);
+      @include breakpoint(large) {
+        max-width: none;
+        flex-direction: row;
+        margin: rem-calc(68 -10 0);
+      }
+    }
+    .column {
+      @include standartBorder;
+      @include standartColumnText;
+    }
+    .description {
+      padding: rem-calc(44 36 21);
+      .button, button {
+        background: $purple;
+      }
+    }
+  }
+  .methods {
+    margin-top: rem-calc(27);
+    text-align: center;
+    .bg-holder {
+      padding: rem-calc(50 6 40);
+      border-bottom: rem-calc(9) solid $yellow;
+      background-size: cover;
+      background-position: center;
+      @include breakpoint(medium) {
+        padding: rem-calc(136 6 179);
+      }
+    }
+    h1, .h1 {
+      background-color: $white;
+      font-size: rem-calc(20);
+      @include breakpoint(large) {
+        font-size: rem-calc(31);
+      }
+    }
+  }
+  mark {
+    color: $yellow;
+  }
+  strong {
+    font-weight: $bold;
+  }
+  .why-we {
+    margin-top: rem-calc(58);
+    padding-bottom: rem-calc(60);
+    border-bottom: rem-calc(1) solid $light-gray;
+    .button, button {
+      background: $yellow;
+    }
+    .icon {
+      @include hideText;
+      width: rem-calc(72);
+      height: rem-calc(72);
+      background-position: center;
+      background-size: contain;
+    }
+    ul {
+      margin-top: rem-calc(37);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include breakpoint(medium) {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+      li {
+        max-width: rem-calc(247);
+        margin: rem-calc(0 10);
+        padding: rem-calc(45 15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        @include standartBorder;
+        & + li {
+          margin-top: rem-calc(15);
+          @include breakpoint(medium) {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .title {
+      font-size: rem-calc(21);
+      font-weight: $bold;
+      margin-top: rem-calc(32);
+      letter-spacing: rem-calc(1);
+    }
+    p {
+      margin-top: rem-calc(8);
+      line-height: rem-calc(20);
+    }
+    .btn-holder {
+      margin-top: rem-calc(37);
+      text-align: center;
+    }
+  }
+  .contact-us {
+    background: $contact-us;
+    //background: $black;
+    padding: rem-calc(51 0 28);
+    margin: rem-calc(30 -15 0);
+  }
+  .form-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 rem-calc(15);
+    @include breakpoint(large) {
+      padding: 0;
+      flex-direction: row;
+    }
+    > * {
+      width: 100%;
+    }
+    .button, button {
+      background: $yellow;
+      width: 100%;
+    }
+    .col {
+      padding: 0;
+      @include breakpoint(large) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .form-group {
+          width: 50%;
+          & + .form-group {
+            margin-left: rem-calc(16);
+          }
+        }
+      }
+    }
+    .form {
+      @include breakpoint(large) {
+        width: 50%;
+      }
+    }
+  }
+  .short-info {
+    color: $white;
+    font-size: rem-calc(17);
+    letter-spacing: rem-calc(.75);
+    margin-bottom: rem-calc(25);
+    @include breakpoint(large) {
+      margin-bottom: 0;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+    a {
+      font-weight: $bold;
+      display: block;
+      margin-top: rem-calc(12);
+      font-size: rem-calc(15);
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+    .section-name {
+      font-weight: $bold;
+      text-transform: uppercase;
+      letter-spacing: rem-calc(1.55);
+      margin-bottom: rem-calc(12);
+      font-size: rem-calc(33);
+    }
+  }
+  .solutions-intro {
+    margin-bottom: rem-calc(95);
+    .button, button {
+      background: $green;
+      width: rem-calc(220);
+      text-align: center;
+      margin-top: rem-calc(30);
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    li {
+      list-style-type: disc;
+      margin-left: 22px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 0;
+      margin-right: 0;
+      letter-spacing: rem-calc(.66);
+      line-height: rem-calc(14);
+      font-size: rem-calc(14);
+      > * {
+        width: 100%;
+        max-width: rem-calc(350);
+        @include breakpoint(large) {
+          width: 50%;
+          max-width: none;
+        }
+        &:first-of-type {
+          max-width: rem-calc(380);
+        }
+        & + * {
+          margin-top: rem-calc(20);
+          @include breakpoint(large) {
+            margin-top: 0;
+            margin-left: rem-calc(70);
+          }
+        }
+      }
+      &:first-of-type {
+        border-bottom: rem-calc(1) solid $light-gray;
+        padding-bottom: rem-calc(50);
+        margin-bottom: rem-calc(50);
+        font-size: rem-calc(16);
+        letter-spacing: rem-calc(.75);
+        line-height: rem-calc(20);
+        p {
+          color: $purple;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+    p {
+      margin-top: rem-calc(15);
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+  .intro-about {
+    padding-bottom: rem-calc(55);
+    border-bottom: rem-calc(1) solid $light-gray;
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include breakpoint(medium) {
+        flex-direction: row;
+      }
+    }
+    .column {
+      @include breakpoint(medium) {
+        width: calc(50% - 20px);
+      }
+    }
+    .text-form {
+      padding-top: rem-calc(14);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      font-size: rem-calc(15);
+      letter-spacing: rem-calc(.7);
+      line-height: rem-calc(20);
+    }
+    .button, button {
+      background: $green;
+    }
+    form {
+      margin-top: rem-calc(15);
+	  p {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		> * {
+		  width: calc(50% - 5px);
+		  height: rem-calc(42);
+
+		  input{
+			height: rem-calc(42);
+		  }
+		}
+
+		br{
+		  display: none;
+		}
+	  }
+    }
+    img {
+      display: block;
+      width: 100%;
+      max-width: rem-calc(350);
+      margin: 0 auto;
+      height: auto;
+      @include breakpoint(medium) {
+        max-width: none;
+      }
+    }
+  }
+  .fire-up {
+    margin-top: rem-calc(41);
+    padding-bottom: rem-calc(29);
+    border-bottom: rem-calc(1) solid $light-gray;
+    h1, .h1 {
+      border-color: #581646;
+      margin-bottom: 0;
+    }
+    .content {
+      background: #fafafa;
+      padding: rem-calc(74 13 42);
+      display: flex;
+      flex-direction: column;
+      @include breakpoint(medium) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .column {
+      font-size: rem-calc(16);
+      letter-spacing: rem-calc(.75);
+      line-height: rem-calc(20);
+      @include breakpoint(medium) {
+        width: calc(50% - 7px);
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .bordered-column {
+      @include standartBorder;
+      background: $white;
+      padding: rem-calc(15 8 30);
+      margin-bottom: rem-calc(35);
+      @include breakpoint(medium) {
+        padding: rem-calc(44 14 30 38);
+        margin-bottom: rem-calc(0);
+      }
+      * + * {
+        margin-top: rem-calc(35);
+        @include breakpoint(medium) {
+          margin-top: rem-calc(75);
+        }
+      }
+    }
+  }
+  .any-backlog {
+    margin-top: rem-calc(5);
+    padding: rem-calc(56 0 70);
+    background: $contact-us;
+    @include breakpoint(medium) {
+      margin-left: -15px;
+      margin-right: -15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .h1, h1 {
+      color: $white;
+    }
+    .item {
+      @include standartBorder;
+      background: $white;
+      padding: rem-calc(32 30 12);
+      text-align: center;
+      max-width: rem-calc(350);
+      width: 100%;
+      @include breakpoint(medium) {
+        max-width: none;
+        width: calc(33.3% - 10px);
+      }
+      &+.item {
+        margin-top: rem-calc(35);
+        @include breakpoint(medium) {
+          margin-top: 0;
+        }
+      }
+      .title {
+        font-size: rem-calc(18);
+        font-weight: $bold;
+        letter-spacing: rem-calc(.84);
+      }
+    }
+    img {
+      width: 100%;
+      max-width: rem-calc(210);
+    }
+    .kinds {
+      margin-top: rem-calc(37);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      @include breakpoint(medium) {
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+  }
+  .rapid-block {
+    margin-top: rem-calc(96);
+    padding-bottom: rem-calc(48);
+    border-bottom: rem-calc(1) solid $light-gray;
+    .text-form {
+      max-width: rem-calc(450);
+    }
+    .title {
+      font-size: rem-calc(22);
+      font-weight: $bold;
+      letter-spacing: rem-calc(.77);
+      line-height: rem-calc(31);
+      margin-bottom: rem-calc(45);
+    }
+    button, .button {
+      background: $green;
+    }
+	form {
+	  margin-top: rem-calc(15);
+	  p {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		> * {
+		  width: calc(50% - 5px);
+		  height: rem-calc(42);
+
+		  input{
+			height: rem-calc(42);
+		  }
+		}
+
+		br{
+		  display: none;
+		}
+	  }
+	}
+    .content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      @include breakpoint(medium) {
+        flex-direction: row;
+      }
+    }
+    .features {
+      max-width: rem-calc(262);
+      margin-top: rem-calc(45);
+      @include breakpoint(medium) {
+        margin-top: 0;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        //justify-content: space-between;
+        color: $purple;
+        font-size: rem-calc(17);
+        font-weight: $bold;
+        letter-spacing: rem-calc(.8);
+        line-height: 1.5;
+        &+li {
+          margin-top: rem-calc(18);
+        }
+      }
+      .img-holder {
+        background-position: center;
+        background-repeat: no-repeat;
+        min-width: rem-calc(70);
+        width: rem-calc(70);
+        height: rem-calc(70);
+        margin-right: rem-calc(20);
+        @include hideText;
+      }
+    }
+  }
+
+  .background-block {
+    margin-top: rem-calc(65);
+    padding-bottom: rem-calc(60);
+    font-size: rem-calc(18);
+    letter-spacing: rem-calc(.63);
+    line-height: 1.3;
+    @include breakpoint(large) {
+      padding-bottom: rem-calc(118);
+    }
+    h1, .h1 {
+      margin-bottom: 0;
+    }
+    .link {
+      color: $purple;
+      font-size: rem-calc(16);
+      letter-spacing: rem-calc(.56);
+      margin-top: rem-calc(12);
+      a {
+        text-decoration: underline;
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+    .content {
+      @include breakpoint(large) {
+        padding-left: rem-calc(22);
+      }
+    }
+    img {
+      width: 100%;
+      max-width: rem-calc(430);
+      height: auto;
+    }
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      &:first-of-type {
+        .text-block {
+          margin-top: rem-calc(38);
+
+        }
+      }
+      >* {
+        &:first-of-type {
+          max-width: rem-calc(413);
+        }
+        &:last-of-type {
+          max-width: rem-calc(430);
+          margin-top: rem-calc(25);
+          @include breakpoint(large) {
+            margin-top: 0;
+            margin-left: rem-calc(15);
+          }
+        }
+      }
+      &+.row {
+        margin-top: rem-calc(25);
+        @include breakpoint(large) {
+          margin-top: rem-calc(52);
+        }
+      }
+    }
+    li {
+      margin-left: rem-calc(28);
+      list-style-type: disc;
+    }
+  }
+
+  .skills-block {
+    border-top: rem-calc(9) solid $green;
+    margin-bottom: rem-calc(115);
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(medium) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    .btn-holder {
+      margin-top: rem-calc(25);
+    }
+    .button, button {
+      background: $purple;
+    }
+    img {
+      width: rem-calc(299);
+      max-width: 100%;
+      height: auto;
+    }
+    .title {
+      font-size: rem-calc(31);
+      font-weight: $bold;
+      letter-spacing: rem-calc(1.09);
+      line-height: rem-calc(41);
+    }
+    .text-holder {
+      max-width: rem-calc(410);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @include breakpoint(medium) {
+        margin-left: rem-calc(20);
+      }
+    }
+  }
+
+  .intro-contact {
+	h1, .h1 {
+	  margin-bottom: 0;
+	}
+	.col {
+	  padding: 0;
+	  @include breakpoint(large) {
+		display: flex;
+		justify-content: space-between;
+	  }
+	  >* {
+		@include breakpoint(large) {
+		  width: calc(50% - 8px);
+		}
+	  }
+	}
+	.content {
+	  padding: rem-calc(42 0 71);
+	  @include breakpoint(medium) {
+		display: flex;
+		padding: rem-calc(42 25 71);
+	  }
+	  @include breakpoint(large) {
+		padding: rem-calc(42 50 71);
+	  }
+	  button, .button {
+		background: $green;
+		text-align: center;
+	  }
+	}
+	form {
+	  .button, button {
+		width: 100%;
+	  }
+	  input {
+		@include breakpoint(medium) {
+		  min-width: rem-calc(260);
+		}
+		@include breakpoint(large) {
+		  min-width: auto;
+		}
+	  }
+	}
+	.column {
+	  @include breakpoint(medium) {
+		width: 50%;
+	  }
+	  &:first-of-type {
+		margin-bottom: rem-calc(25);
+		@include breakpoint(medium) {
+		  margin-bottom: 0;
+		  margin-right: rem-calc(65);
+		}
+	  }
+	}
+	.text-info {
+	  margin-top: rem-calc(5);
+	  button, .button {
+		color: $white;
+		background: $deep-red;
+		margin-top: rem-calc(20);
+		max-width: rem-calc(220);
+	  }
+	  .title {
+		font-size: rem-calc(17);
+		letter-spacing: rem-calc(.8);
+		margin-bottom: rem-calc(15);
+		color: $black;
+
+	  }
+	  a {
+		font-weight: $bold;
+		font-size: rem-calc(15);
+		letter-spacing: rem-calc(.7);
+		display: block;
+		color: $black;
+		margin-top: rem-calc(3);
+	  }
+	}
+  }
+}
